@@ -1,0 +1,42 @@
+<input
+type="text"
+id="email2"
+name="email1"
+placeholder="Escribe tu email"
+>
+<input
+type="password"
+id="password2"
+name="password1"
+placeholder="Escribe tu contraseña"
+>
+<input
+type="text"
+id="name2"
+name="nam1"
+placeholder="Escribe tu nombre"
+>
+<input
+type="number"
+id="age2"
+name="age1"
+placeholder="Escribe tu edad"
+>
+<button
+id="Submit1"
+name="Submit"
+class="btn-primary"
+>Registrar
+</button>
+<script>
+       import {applyEvents} from './apply-events.js'
+       import {applyValidations} from './apply-validations.js'
+       let functions = [{"name":"letters","fn":"(value)=>/([a-zA-Z])/.test(value)"},{"name":"numbers","fn":"(value)=>/[0-9]/.test(value)"}]
+       let nodes = [{"id":"email2","name":"email1","element":"input:text","type":"string","text":"Escribe tu email","validations":{"fns":["letters","numbers"],"errorClass":"error-element","successClass":"success-element"}},{"id":"password2","name":"password1","element":"input:password","type":"string","text":"Escribe tu contraseña","validations":{"fns":["letters","numbers"],"errorClass":"error-element","successClass":"success-element"}},{"id":"name2","name":"nam1","element":"input:text","type":"string","text":"Escribe tu nombre","validations":{"fns":["letters"],"errorClass":"error-element","successClass":"success-element"}},{"id":"age2","name":"age1","element":"input:number","type":"number","text":"Escribe tu edad","validations":{"fns":["numbers"],"errorClass":"error-element","successClass":"success-element"}},{"id":"Submit1","name":"Submit","element":"button","class":"btn-primary","text":"Registrar","events":{"click":{"eventName":"register-event","values":["email2","password2","name2","age2"]}}}]
+       for(let node of nodes){
+         let htmlNode = document.getElementById(node.id)
+         applyEvents(htmlNode,node.events)
+         applyValidations(htmlNode,node.validations,functions)
+       }
+     </script>
+    

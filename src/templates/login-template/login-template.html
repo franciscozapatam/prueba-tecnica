@@ -1,0 +1,30 @@
+<input
+type="text"
+id="email1"
+name="email"
+placeholder="Escribe tu email"
+>
+<input
+type="password"
+id="password1"
+name="password"
+placeholder="Escribe tu contraseña"
+>
+<button
+id="Submit"
+name="Submit"
+class="btn-primary"
+>Registrar
+</button>
+<script>
+       import {applyEvents} from './apply-events.js'
+       import {applyValidations} from './apply-validations.js'
+       let functions = [{"name":"letters","fn":"(value)=>/([a-zA-Z])/.test(value)"},{"name":"numbers","fn":"(value)=>/[0-9]/.test(value)"}]
+       let nodes = [{"id":"email1","name":"email","element":"input:text","type":"string","text":"Escribe tu email","validations":{"fns":["letters","numbers"],"errorClass":"error-element","successClass":"success-element"}},{"id":"password1","name":"password","element":"input:password","type":"string","text":"Escribe tu contraseña","validations":{"fns":["letters","numbers"],"errorClass":"error-element","successClass":"success-element"}},{"id":"Submit","name":"Submit","element":"button","class":"btn-primary","text":"Registrar","events":{"click":{"eventName":"login-event","values":["email1","password1"]}}}]
+       for(let node of nodes){
+         let htmlNode = document.getElementById(node.id)
+         applyEvents(htmlNode,node.events)
+         applyValidations(htmlNode,node.validations,functions)
+       }
+     </script>
+    
