@@ -2,7 +2,7 @@
 
 ## Contexto
 
-En este ejercicio, se requiere la creación de un script que pueda generar elementos HTML dinámicamente y colocarlas en la carpeta correspondiente. Éstos deben generarse a partir de archivos JSON ubicados en "json". En estos JSON pueden venir diferentes nodos HTML (en los ejemplos, vienen sólo input y button, pero pudieran venir de cualquier tipo)
+En este ejercicio, se requiere la creación de un script que pueda generar archivos parciales HTML y colocarlas en la carpeta correspondiente. Éstos deben generarse a partir de archivos JSON ubicados en "json". En estos JSON pueden venir diferentes nodos HTML (en los ejemplos, vienen sólo input y button, pero pudieran venir de cualquier tipo)
 
 ## Ejemplo de JSON
 
